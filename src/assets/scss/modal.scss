@@ -1,0 +1,50 @@
+// ================================================================================================================================================================================================================================================================================================================================
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba($color: #000, $alpha: 0.6);
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 0.5s ease 0s;
+  padding: 0px 15px;
+  z-index: 2222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // .popup__open
+  &._active {
+    opacity: 1;
+    visibility: visible;
+    .popup__body {
+      opacity: 1;
+      visibility: visible;
+      transform: perspective(600px) translate(0px, 0px) rotateX(0deg);
+    }
+  }
+  // .popup__body
+  &__body {
+    background-color: #fff;
+    width: 500px;
+    max-width: 100%;
+    padding: 0;
+    position: relative;
+    transition: all 0.5s ease 0s;
+    opacity: 0;
+    visibility: hidden;
+    transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+  }
+  // .popup__close
+  &__close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 30px;
+    color: red;
+  }
+}
+// ================================================================================================================================================================================================================================================================================================================================
