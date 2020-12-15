@@ -1,26 +1,32 @@
 // ================================================================================================================================================================================================================================================================================================================================
 // BUILD SWIPER \\
-const _swipers = document.querySelectorAll('._swiper');
+const _swipers = document.querySelectorAll('._swiper')
 
 if (_swipers.length > 0) {
   _swipers.forEach(swiper => {
-    const swiperHTML = swiper.innerHTML;
-    const swiperContainer = document.createElement('div');
+    const swiperHTML = swiper.innerHTML
+    const swiperContainer = document.createElement('div')
 
-    swiperContainer.className = 'swiper-container';
+    swiperContainer.className = 'swiper-container'
 
-    swiper.insertAdjacentElement('afterend', swiperContainer);
-    swiperContainer.insertAdjacentHTML('beforeend', swiperHTML);
+    swiper.insertAdjacentElement('afterend', swiperContainer)
+    swiperContainer.insertAdjacentHTML('beforeend', swiperHTML)
 
-    swiper.innerHTML = '';
-    swiper.append(swiperContainer);
-  });
+    swiper.innerHTML = ''
+    swiper.append(swiperContainer)
+  })
 }
 // BUILD SWIPER \\
 // ================================================================================================================================================================================================================================================================================================================================
 // SLIDER \\
-import { Swiper, Navigation, Pagination, Scrollbar, EffectCoverflow } from 'swiper';
-Swiper.use([Navigation, Pagination, Scrollbar, EffectCoverflow]);
+import {
+  Swiper,
+  Navigation,
+  Pagination,
+  Scrollbar,
+  EffectCoverflow,
+} from 'swiper'
+Swiper.use([Navigation, Pagination, Scrollbar, EffectCoverflow])
 
 const nameOfSlider = new Swiper(document.querySelector('.slider'), {
   // ================================================================================================================================================================================================================================================================================================================================
@@ -71,7 +77,7 @@ const nameOfSlider = new Swiper(document.querySelector('.slider'), {
   wrapperClass: 'swiper-container',
   // CONTROL \\
   // ================================================================================================================================================================================================================================================================================================================================
-});
+})
 
 // SLIDER \\
 // ================================================================================================================================================================================================================================================================================================================================

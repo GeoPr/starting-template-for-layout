@@ -70,34 +70,36 @@
 //   }
 // });
 
-const links = document.querySelectorAll('.link-to-popup');
-const closeLinks = document.querySelectorAll('.link-close-popup');
-const popups = document.querySelectorAll('.popup');
+const links = document.querySelectorAll('.link-to-popup')
+const closeLinks = document.querySelectorAll('.link-close-popup')
+const popups = document.querySelectorAll('.popup')
 
-links.forEach(link => link.addEventListener('click', openHandler));
+links.forEach(link => link.addEventListener('click', openHandler))
 
 function openHandler(e) {
-  const href = e.target.closest('.link-to-popup').getAttribute('href').slice(1);
-  const popup = document.getElementById(href);
-  popup.classList.add('_active');
-  document.body.classList.add('_lock');
+  const href = e.target.closest('.link-to-popup').getAttribute('href').slice(1)
+  const popup = document.getElementById(href)
+  popup.classList.add('_active')
+  document.body.classList.add('_lock')
 }
 
-closeLinks.forEach(closeLink => closeLink.addEventListener('click', closeHandler));
+closeLinks.forEach(closeLink =>
+  closeLink.addEventListener('click', closeHandler),
+)
 
 function closeHandler(e) {
-  const popup = e.target.closest('.popup');
-  popup.classList.remove('_active');
-  document.body.classList.remove('_lock');
+  const popup = e.target.closest('.popup')
+  popup.classList.remove('_active')
+  document.body.classList.remove('_lock')
 }
 
-popups.forEach(popup => popup.addEventListener('click', popupHandler));
+popups.forEach(popup => popup.addEventListener('click', popupHandler))
 
 function popupHandler(e) {
-  const { t } = e.target.dataset;
+  const { t } = e.target.dataset
   if (t === 'modal') {
-    e.target.closest('.popup').classList.remove('_active');
-    document.body.classList.remove('_lock');
+    e.target.closest('.popup').classList.remove('_active')
+    document.body.classList.remove('_lock')
   }
 }
 // МОДАЛЬНЫЕ ОКНА \\

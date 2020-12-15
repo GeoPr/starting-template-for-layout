@@ -1,51 +1,51 @@
 // ================================================================================================================================================================================================================================================================================================================================
 // SMOOTH SCROLL \\
-const links = document.querySelectorAll('.smooth-link');
-const nav = document.getElementById('nav');
+const links = document.querySelectorAll('.smooth-link')
+const nav = document.getElementById('nav')
 
-const duration = 2000;
+const duration = 2000
 
-links.forEach(link => link.addEventListener('click', clickHandler));
+links.forEach(link => link.addEventListener('click', clickHandler))
 
 function clickHandler(e) {
-  e.preventDefault();
+  e.preventDefault()
 
-  const id = e.target.getAttribute('href').replace('#', '');
-  const block = document.getElementById(id);
+  const id = e.target.getAttribute('href').replace('#', '')
+  const block = document.getElementById(id)
 
-  smoothScroll(block, duration);
+  smoothScroll(block, duration)
 }
 
 function smoothScroll(target, dur) {
-  const targetPosition = target.getBoundingClientRect().top - nav.scrollHeight;
-  const startPosition = window.pageYOffset;
+  const targetPosition = target.getBoundingClientRect().top - nav.scrollHeight
+  const startPosition = window.pageYOffset
 
-  let startTime;
+  let startTime
 
   function animation(currentTime) {
-    startTime === undefined && (startTime = currentTime);
+    startTime === undefined && (startTime = currentTime)
 
-    const timeElapsed = currentTime - startTime;
-    const run = ease(timeElapsed, startPosition, targetPosition, dur);
+    const timeElapsed = currentTime - startTime
+    const run = ease(timeElapsed, startPosition, targetPosition, dur)
 
-    window.scrollTo({ top: run });
+    window.scrollTo({ top: run })
 
-    timeElapsed < dur && requestAnimationFrame(animation);
+    timeElapsed < dur && requestAnimationFrame(animation)
   }
 
   function ease(t, b, c, d) {
-    t /= d / 2;
+    t /= d / 2
 
     if (t < 1) {
-      return (c / 2) * t * t + b;
+      return (c / 2) * t * t + b
     }
 
-    t--;
+    t--
 
-    return (-c / 2) * (t * (t - 2) - 1) + b;
+    return (-c / 2) * (t * (t - 2) - 1) + b
   }
 
-  requestAnimationFrame(animation);
+  requestAnimationFrame(animation)
 }
 // SMOOTH SCROLL \\
 // ================================================================================================================================================================================================================================================================================================================================

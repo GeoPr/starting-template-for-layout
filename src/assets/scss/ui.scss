@@ -3,6 +3,9 @@ body {
   &._lock {
     overflow: hidden;
   }
+  &._hover * {
+    pointer-events: none;
+  }
 }
 .wrapper {
   width: 100%;
